@@ -1,0 +1,119 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+footer {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  color: #363636;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 58px;
+  margin: 10px 0 10px 0;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+footer {
+  font-size: 15px;
+  margin: 40px 20px 15px 20px;
+}
+
+.container {
+  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  max-width: 475px;
+  margin-top: 15px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  margin: 20px 10px;
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f6eae9;
+}
+
+.search-button {
+  margin: 5px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f6eae9;
+}
+
+.current-location-button {
+  margin: 5px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #f6eae9;
+}
+
+.search-button :hover,
+.current-location-button :hover {
+  cursor: pointer;
+  color: #f78259;
+}
+
+.fahrenheit-link,
+.celcius-link {
+  color: #363636;
+}
+
+.mainTemperature {
+  margin: 40px;
+}
+
+.feels-like {
+  margin: 20px;
+}
+
+.weather-recommendation {
+  margin: 5px 15px 30px 15px;
+}
+
+.col-4 {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+.row.forecast,
+.row.forecast-icon,
+.row.temperature {
+  margin: 10px;
+}
+
+.col-2.forecast {
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  text-align: center;
+  margin: 5px;
+}
+
+.fa-sun {
+  color: #f78259;
+}
+
+.col-2.temperature {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  margin: 5px;
+  padding: 0;
+}

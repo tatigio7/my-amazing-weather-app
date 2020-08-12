@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/27cffd6312.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <form id="search">
+        <div>
+          <input
+            type="search"
+            placeholder="Enter a city"
+            autocomplete="off"
+            autofocus="on"
+            class="search-bar"
+            id="inputCity"
+          />
+          <button type="submit" value="Search" class="search-button">
+            <i class="fas fa-search-location"></i>
+          </button>
+          <button
+            type="click"
+            class="current-location-button"
+            id="currentLocation"
+          >
+            <i class="fas fa-map-marked-alt"></i>
+          </button>
+          <span id="measure-temp">
+            <a href="" id="fahrenheit-link">°F</a>
+            &#124;
+            <a href="" id="celsius-link">°C</a>
+          </span>
+        </div>
+        <div class="current-city">
+          <h1>
+            Currently in
+            <p>
+              Los Angeles
+            </p>
+          </h1>
+          <div id="currentDate">
+            <h2 id="date">Tuesday 16:00</h2>
+          </div>
+
+          <h3>
+            <span id="mainTemperature">75</span>° &#124;
+            <i class="fas fa-sun"></i>
+          </h3>
+
+          <div class="feels-like">
+            <h4>Feels Like: <span id="feelLikeTemperature">75</span>°</h4>
+          </div>
+          <div class="weather-recommendation">
+            <h5>
+              You May Want to Use Sunblock Today
+            </h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">High: <span id="temperatureHigh">81</span>°</div>
+          <div class="col-4">Humidity: <span id="humidity">0</span>%</div>
+          <div class="col-4">
+            Sunrise: 5:52 am
+          </div>
+          <div class="col-4">Low: <span id="temperatureLow">63</span>°</div>
+          <div class="col-4">Wind: <span id="wind">19</span> km/h</div>
+          <div class="col-4">
+            Sunset: 8:04 pm
+          </div>
+        </div>
+        <hr />
+        <div class="row forecast">
+          <div class="col-2 forecast">
+            Sat
+          </div>
+          <div class="col-2 forecast">
+            Sun
+          </div>
+          <div class="col-2 forecast">
+            Mon
+          </div>
+          <div class="col-2 forecast">
+            Tues
+          </div>
+          <div class="col-2 forecast">
+            Wed
+          </div>
+        </div>
+        <div class="row forecast-icon">
+          <div class="col-2 forecast">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="col-2 forecast">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="col-2 forecast">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="col-2 forecast">
+            <i class="fas fa-sun"></i>
+          </div>
+          <div class="col-2 forecast">
+            <i class="fas fa-sun"></i>
+          </div>
+        </div>
+        <div class="row temperature">
+          <div class="col-2 temperature">
+            82° &#124; 63°
+          </div>
+          <div class="col-2 temperature">
+            83° &#124; 62°
+          </div>
+          <div class="col-2 temperature">
+            82° &#124; 63°
+          </div>
+          <div class="col-2 temperature">
+            83° &#124; 62°
+          </div>
+          <div class="col-2 temperature">
+            80° &#124; 61°
+          </div>
+        </div>
+        <hr />
+        <footer>
+          Coded by Tatiana Arevalo
+        </footer>
+      </form>
+    </div>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>
