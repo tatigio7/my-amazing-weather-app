@@ -53,6 +53,7 @@
             &#124;
             <a href="" id="celsius-link">°C</a>
           </span>
+        </form>
         </div>
         <div class="current-city">
           <h1>
@@ -80,16 +81,22 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-4">High: <span id="temperatureHigh">81</span>°</div>
-          <div class="col-4">Humidity: <span id="humidity">0</span>%</div>
-          <div class="col-4">
-            Sunrise: 5:52 am
-          </div>
-          <div class="col-4">Low: <span id="temperatureLow">63</span>°</div>
-          <div class="col-4">Wind: <span id="wind">19</span> km/h</div>
-          <div class="col-4">
-            Sunset: 8:04 pm
-          </div>
+          <ul class="col-4">
+            <li>High: <span id="temperatureHigh">81</span>°</li>
+            <li>Low: <span id="temperatureLow">63</span>°</li>
+          </ul>
+          <ul class="col-4">
+            <li>Humidity: <span id="humidity">0</span>%</li>
+            <li>Wind: <span id="wind">19</span> km/h</li>
+          </ul>
+          <ul class="col-4">
+            <li>
+              Sunrise: 5:52
+            </li>
+            <li>
+              Sunset: 8:04
+            </li>
+          </ul>
         </div>
         <hr />
         <div class="row forecast">
@@ -148,12 +155,13 @@
           Coded by Tatiana Arevalo and
           <a
             href="https://github.com/tatigio7/my-amazing-weather-app/find/master"
+            target="_blank"
             >open-sourced on GitHub
           </a>
         </footer>
-      </form>
     </div>
 
     <script src="src/app.js"></script>
+
   </body>
 </html>
