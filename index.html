@@ -48,120 +48,116 @@
           >
             <i class="fas fa-map-marked-alt"></i>
           </button>
-          <span id="measure-temp">
+          <span>
             <a href="" id="fahrenheit-link">°F</a>
             &#124;
             <a href="" id="celsius-link">°C</a>
           </span>
-        </form>
         </div>
-        <div class="current-city">
-          <h1>
-            Currently in
-            <p>
-              Los Angeles
-            </p>
-          </h1>
-          <div id="currentDate">
-            <h2 id="date">Tuesday 16:00</h2>
-          </div>
+      </form>
+      <div class="current-city">
+        <h1>
+          Currently in
+          <p>
+            Los Angeles
+          </p>
+        </h1>
+      </div>
+      <div id="currentDate">
+        <h2 id="date">Tuesday 16:00</h2>
+      </div>
 
-          <h3>
-            <span id="mainTemperature">75</span>° &#124;
-            <i class="fas fa-sun"></i>
-          </h3>
+      <h3>
+        <span id="mainTemperature">75</span>° &#124;
+        <i class="fas fa-sun"></i>
+      </h3>
 
-          <div class="feels-like">
-            <h4>Feels Like: <span id="feelLikeTemperature">75</span>°</h4>
-          </div>
-          <div class="weather-recommendation">
-            <h5>
-              You May Want to Use Sunblock Today
-            </h5>
-          </div>
+      <h4>Feels Like: <span id="feelLikeTemperature">75</span>°</h4>
+
+      <h5>
+        You May Want to Use Sunblock Today
+      </h5>
+
+      <div class="row weatherDetails">
+        <ul class="col-4">
+          <li>High: <span id="temperatureHigh">81</span>°</li>
+          <li>Low: <span id="temperatureLow">63</span>°</li>
+        </ul>
+        <ul class="col-4">
+          <li>Humidity: <span id="humidity">0</span>%</li>
+          <li>Wind: <span id="wind">19</span> km/h</li>
+        </ul>
+        <ul class="col-4">
+          <li>
+            Sunrise: 5:52
+          </li>
+          <li>
+            Sunset: 8:04
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="row forecast">
+        <div class="col-2 forecast">
+          Sat
         </div>
-        <div class="row">
-          <ul class="col-4">
-            <li>High: <span id="temperatureHigh">81</span>°</li>
-            <li>Low: <span id="temperatureLow">63</span>°</li>
-          </ul>
-          <ul class="col-4">
-            <li>Humidity: <span id="humidity">0</span>%</li>
-            <li>Wind: <span id="wind">19</span> km/h</li>
-          </ul>
-          <ul class="col-4">
-            <li>
-              Sunrise: 5:52
-            </li>
-            <li>
-              Sunset: 8:04
-            </li>
-          </ul>
+        <div class="col-2 forecast">
+          Sun
         </div>
-        <hr />
-        <div class="row forecast">
-          <div class="col-2 forecast">
-            Sat
-          </div>
-          <div class="col-2 forecast">
-            Sun
-          </div>
-          <div class="col-2 forecast">
-            Mon
-          </div>
-          <div class="col-2 forecast">
-            Tues
-          </div>
-          <div class="col-2 forecast">
-            Wed
-          </div>
+        <div class="col-2 forecast">
+          Mon
         </div>
-        <div class="row forecast-icon">
-          <div class="col-2 forecast">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="col-2 forecast">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="col-2 forecast">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="col-2 forecast">
-            <i class="fas fa-sun"></i>
-          </div>
-          <div class="col-2 forecast">
-            <i class="fas fa-sun"></i>
-          </div>
+        <div class="col-2 forecast">
+          Tues
         </div>
-        <div class="row temperature">
-          <div class="col-2 temperature">
-            82° &#124; 63°
-          </div>
-          <div class="col-2 temperature">
-            83° &#124; 62°
-          </div>
-          <div class="col-2 temperature">
-            82° &#124; 63°
-          </div>
-          <div class="col-2 temperature">
-            83° &#124; 62°
-          </div>
-          <div class="col-2 temperature">
-            80° &#124; 61°
-          </div>
+        <div class="col-2 forecast">
+          Wed
         </div>
-        <hr />
-        <footer>
-          Coded by Tatiana Arevalo and
-          <a
-            href="https://github.com/tatigio7/my-amazing-weather-app/find/master"
-            target="_blank"
-            >open-sourced on GitHub
-          </a>
-        </footer>
+      </div>
+      <div class="row forecast-icon">
+        <div class="col-2 forecast">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="col-2 forecast">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="col-2 forecast">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="col-2 forecast">
+          <i class="fas fa-sun"></i>
+        </div>
+        <div class="col-2 forecast">
+          <i class="fas fa-sun"></i>
+        </div>
+      </div>
+      <div class="row temperature">
+        <div class="col-2 temperature">
+          82° &#124; 63°
+        </div>
+        <div class="col-2 temperature">
+          83° &#124; 62°
+        </div>
+        <div class="col-2 temperature">
+          82° &#124; 63°
+        </div>
+        <div class="col-2 temperature">
+          83° &#124; 62°
+        </div>
+        <div class="col-2 temperature">
+          80° &#124; 61°
+        </div>
+      </div>
+      <hr />
+      <footer>
+        Coded by Tatiana Arevalo and
+        <a
+          href="https://github.com/tatigio7/my-amazing-weather-app/find/master"
+          target="_blank"
+          >open-sourced on GitHub
+        </a>
+      </footer>
     </div>
-
     <script src="src/app.js"></script>
-
   </body>
 </html>

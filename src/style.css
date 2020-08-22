@@ -24,10 +24,12 @@ h3 {
 
 h4 {
   font-size: 20px;
+  margin: 20px;
 }
 
 h5 {
   font-size: 20px;
+  margin: 5px 15px 30px 15px;
 }
 
 li {
@@ -94,21 +96,13 @@ footer {
   margin: 40px;
 }
 
-.feels-like {
-  margin: 20px;
-}
-
-.weather-recommendation {
+.row.weatherDetails {
   margin: 5px 15px 30px 15px;
-}
-
-.row {
-  margin: 10px;
   padding: 0;
+  font-size: 15px;
 }
 
 .col-4 {
-  font-size: 15px;
   margin: 0;
   padding: 5px;
 }
