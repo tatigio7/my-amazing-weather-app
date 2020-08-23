@@ -1,5 +1,7 @@
 // Date Feature
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+
   let days = [
     "Sunday",
     "Monday",
@@ -9,6 +11,8 @@ function formatDate(date) {
     "Friday",
     "Saturday",
   ];
+
+  let day = days[date.getDay()];
 
   let months = [
     "January",
@@ -25,13 +29,11 @@ function formatDate(date) {
     "December",
   ];
 
-  let day = days[currentDate.getDay()];
-  let month = months[currentDate.getMonth()];
-  let dates = currentDate.getDate();
+  let month = months[date.getMonth()];
 
-  let hour = currentDate.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
   }
 
   let minutes = currentDate.getMinutes();
@@ -39,7 +41,7 @@ function formatDate(date) {
     minutes = `0${minutes}`;
   }
 
-  return `${day}, ${month} ${dates} ${hour}:${minutes}`;
+  return `${day}, ${month} ${hours}:${minutes}`;
 }
 
 let currentDate = new Date();
