@@ -86,10 +86,12 @@ searchForm.addEventListener("submit", searchCity);
 //Weather API
 function showWeather(response) {
   console.log(response.data);
-  document.querySelector("p").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#mainTemperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#weatherDescription").innerHTML =
+    response.data.weather[0].description;
   document.querySelector("#feelLikeTemperature").innerHTML = Math.round(
     response.data.main.feels_like
   );
