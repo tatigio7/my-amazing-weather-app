@@ -97,7 +97,7 @@ footer {
 }
 
 .row.weatherDetails {
-  margin: 5px 15px 30px 15px;
+  margin: 5px 15px 20px 15px;
   padding: 0;
   font-size: 15px;
 }
@@ -108,12 +108,12 @@ footer {
 }
 
 .row.forecast,
-.row.forecast-icon,
-.row.temperature {
+.forecast-icon,
+.forecast-temperature {
   margin: 10px;
 }
 
-.col-2.forecast {
+.col-2 {
   font-size: 25px;
   text-align: center;
   margin: 5px;
@@ -123,7 +123,7 @@ footer {
   color: #f78259;
 }
 
-.col-2.temperature {
+.forecast-temperature {
   font-size: 16px;
   text-align: center;
   margin: 5px;
