@@ -68,24 +68,26 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertCelsius);
 
 //City Search Display
-function searchCity(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#inputCity");
-  let city = searchInput.value;
-
+function search(city) {
   let apiKey = "9b340dbdba6235146c64b6b9e4558596";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeather);
-  searchInput.value = " ";
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#inputCity");
+
+  search(searchInput.value);
+}
+search("Los Angeles");
 
 let searchForm = document.querySelector("#search");
 searchForm.addEventListener("submit", searchCity);
 
 //Weather API
 function showWeather(response) {
-  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#mainTemperature").innerHTML = Math.round(
     response.data.main.temp
