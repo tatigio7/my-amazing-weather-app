@@ -85,13 +85,17 @@ footer {
 
 .search-button :hover,
 .current-location-button :hover {
-  cursor: pointer;
+  cursor: default;
   color: #f78259;
 }
 
-.fahrenheit-link,
-.celcius-link {
+.active {
   color: #363636;
+}
+
+.active:hover {
+  cursor: default;
+  text-decoration: none;
 }
 
 .mainTemperature {
