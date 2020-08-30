@@ -71,7 +71,6 @@ function showForecast(response) {
           forecast.weather[0].icon
         }@2x.png" 
          alt="" 
-         id = "forecast-icon"
         />
       </li>
       <li class="forecast-temperature">
@@ -130,9 +129,12 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
-  document.querySelector("#sunrise").innerHTML =
-    response.data.sys.sunrise * 1000;
-  document.querySelector("#sunset").innerHTML = response.data.sys.sunset * 1000;
+  document.querySelector("#sunrise").innerHTML = formatHours(
+    response.data.sys.sunrise * 1000
+  );
+  document.querySelector("#sunset").innerHTML = formatHours(
+    response.data.sys.sunset * 1000
+  );
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
