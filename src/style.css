@@ -114,16 +114,19 @@ footer {
 }
 
 .row.forecast,
-.forecast-icon,
 .forecast-temperature {
   margin: 10px;
 }
 
 .col-2 {
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
   margin: 5px;
   padding: 0px;
+}
+
+.forecast-icon {
+  width: 100%;
 }
 
 .fa-sun {
