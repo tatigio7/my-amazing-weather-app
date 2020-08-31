@@ -139,3 +139,14 @@ footer {
   margin: 5px;
   padding: 0;
 }
+
+@media (min-width: 540px) {
+  #search,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    padding: 0 15px;
+  }
+}

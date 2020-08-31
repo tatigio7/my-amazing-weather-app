@@ -30,8 +30,9 @@ function formatDate(timestamp) {
   ];
 
   let month = months[date.getMonth()];
+  let dates = date.getDate();
 
-  return `${day}, ${month} ${formatHours(timestamp)}`;
+  return `${day}, ${month} ${dates} ${formatHours(timestamp)}`;
 }
 
 let currentDate = new Date();
@@ -57,6 +58,7 @@ function formatHours(timestamp) {
 function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
+
   let forecast = null;
 
   for (let index = 0; index < 5; index++) {
@@ -74,7 +76,9 @@ function showForecast(response) {
         />
       </li>
       <li class="forecast-temperature">
-        ${Math.round(forecast.main.temp_max)}° &#124; 
+        <span id="forecastTempMax">${Math.round(
+          forecast.main.temp_max
+        )}° &#124; 
         ${Math.round(forecast.main.temp_min)}°
       </li>
     </ul>
@@ -107,6 +111,9 @@ searchForm.addEventListener("submit", handleSubmit);
 //Weather API
 function showWeather(response) {
   celsiusTemperature = response.data.main.temp;
+  feelsLikeTemperature = response.data.main.feels_like;
+  temperatureHigh = response.data.main.temp_max;
+  temperatureLow = response.data.main.temp_min;
 
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#mainTemperature").innerHTML = Math.round(
@@ -115,13 +122,13 @@ function showWeather(response) {
   document.querySelector("#weatherDescription").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#feelLikeTemperature").innerHTML = Math.round(
-    response.data.main.feels_like
+    feelsLikeTemperature
   );
   document.querySelector("#temperatureHigh").innerHTML = Math.round(
-    response.data.main.temp_max
+    temperatureHigh
   );
   document.querySelector("#temperatureLow").innerHTML = Math.round(
-    response.data.main.temp_min
+    temperatureLow
   );
   document.querySelector("#humidity").innerHTML = Math.round(
     response.data.main.humidity
@@ -171,6 +178,18 @@ function convertFahrenheit(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  let feelsLikeElement = document.querySelector("#feelLikeTemperature");
+  let feelsLikeTemp = (feelsLikeTemperature * 9) / 5 + 32;
+  feelsLikeElement.innerHTML = `${Math.round(feelsLikeTemp)}`;
+
+  let highTempElement = document.querySelector("#temperatureHigh");
+  let highTemp = (temperatureHigh * 9) / 5 + 32;
+  highTempElement.innerHTML = `${Math.round(highTemp)}`;
+
+  let lowTempElement = document.querySelector("#temperatureLow");
+  let lowTemp = (temperatureLow * 9) / 5 + 32;
+  lowTempElement.innerHTML = `${Math.round(lowTemp)}`;
 }
 
 function convertCelsius(event) {
@@ -179,9 +198,21 @@ function convertCelsius(event) {
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#mainTemperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let feelsLikeElement = document.querySelector("#feelLikeTemperature");
+  feelsLikeElement.innerHTML = `${Math.round(feelsLikeTemperature)}`;
+
+  let highTempElement = document.querySelector("#temperatureHigh");
+  highTempElement.innerHTML = `${Math.round(temperatureHigh)}`;
+
+  let lowTempElement = document.querySelector("#temperatureLow");
+  lowTempElement.innerHTML = `${Math.round(temperatureLow)}`;
 }
 
 let celsiusTemperature = null;
+let feelsLikeTemperature = null;
+let highTemperature = null;
+let lowTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertFahrenheit);
