@@ -51,10 +51,16 @@ footer {
 }
 
 .container {
-  background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+    radial-gradient(
+      91% 146%,
+      rgba(255, 255, 255, 0.5) 47%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
+  background-blend-mode: screen;
   max-width: 475px;
   margin: 15px auto;
-  border: 1px solid #000;
+  border: 1px solid #f5efef;
   border-radius: 20px;
   box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.1);
 }
@@ -64,7 +70,8 @@ footer {
   width: 250px;
   height: 40px;
   border-radius: 5px;
-  background-color: #f6eae9;
+  border: none;
+  background-color: #d3cbc8;
 }
 
 .search-button {
@@ -72,7 +79,9 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background-color: #f6eae9;
+  border: none;
+  background-color: #d3cbc8;
+  transition: all 240ms ease-in-out;
 }
 
 .current-location-button {
@@ -80,13 +89,16 @@ footer {
   width: 40px;
   height: 40px;
   border-radius: 5px;
-  background-color: #f6eae9;
+  border: none;
+  background-color: #d3cbc8;
+  transition: all 240ms ease-in-out;
 }
 
 .search-button :hover,
 .current-location-button :hover {
   cursor: default;
-  color: #f78259;
+  color: #363636;
+  opacity: 0.5;
 }
 
 .active {
@@ -140,7 +152,7 @@ footer {
   padding: 0;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 580px) {
   #search,
   h1,
   h2,
