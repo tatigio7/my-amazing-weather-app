@@ -181,7 +181,7 @@ function convertFahrenheit(event) {
   fahrenheitLink.classList.add("active");
 
   celsiusLink.addEventListener("click", convertCelsius);
-  fahrenheitLink.removeEventListener("click", convertFahrenheit);
+  fahrenheitLink.addEventListener("click", convertFahrenheit);
 
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
@@ -198,10 +198,19 @@ function convertFahrenheit(event) {
   let lowTemp = (temperatureLow * 9) / 5 + 32;
   lowTempElement.innerHTML = `${Math.round(lowTemp)}`;
 
-  let forecastHighElement = document.querySelectorAll(".forecastTempMax");
-  forecastHighElement.forEach(function (high) {
-    let forecastHighTemp = high.innerHTML;
-    high.innerHTML = `${Math.round(forecastHighTemp * 9) / 5 + 32}`;
+  let highElement = document.querySelectorAll(".forecastTempMax");
+  let lowElement = document.querySelectorAll(".forecastTempMin");
+
+  highElement.forEach(function (high) {
+    let currentTemp = high.innerHTML;
+    high.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}`;
+    return highElement;
+  });
+
+  lowElement.forEach(function (low) {
+    let currentTemp = low.innerHTML;
+    low.innerHTML = `${Math.round((currentTemp * 9) / 5 + 32)}`;
+    return lowElement;
   });
 }
 
@@ -222,10 +231,19 @@ function convertCelsius(event) {
   let lowTempElement = document.querySelector("#temperatureLow");
   lowTempElement.innerHTML = `${Math.round(temperatureLow)}`;
 
-  let forecastLowElement = document.querySelectorAll(".forecastTempMin");
-  forecastLowElement.forEach(function (low) {
-    let forecastLowTemp = low.innerHTML;
-    low.innerHTML = `${Math.round(forecastLowTemp)}`;
+  let highElement = document.querySelectorAll(".forecastTempMax");
+  let lowElement = document.querySelectorAll(".forecastTempMin");
+
+  highElement.forEach(function (high) {
+    let currentTemp = high.innerHTML;
+    high.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
+    return highElement;
+  });
+
+  lowElement.forEach(function (low) {
+    let currentTemp = low.innerHTML;
+    low.innerHTML = `${Math.round(((currentTemp - 32) * 5) / 9)}`;
+    return lowElement;
   });
 }
 
