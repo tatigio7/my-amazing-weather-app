@@ -51,7 +51,7 @@ footer {
 }
 
 .container {
-  background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+  background-image: radial-gradient(73% 147%, #eee8e8 59%, #ece2df 100%),
     radial-gradient(
       91% 146%,
       rgba(255, 255, 255, 0.5) 47%,
@@ -152,8 +152,8 @@ footer {
   padding: 0;
 }
 
-@media (min-width: 580px) {
-  #search,
+@media screen (min-width: 580px) {
+  .search,
   h1,
   h2,
   h3,
