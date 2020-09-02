@@ -76,12 +76,14 @@ function showForecast(response) {
         />
       </li>
       <li class="forecast-temperature">
-        <span id="forecastTempMax">
-        ${Math.round(forecast.main.temp_max)}° 
-        &#124; 
-        <span id="forecastTempMin">
-        ${Math.round(forecast.main.temp_min)}°
-      </li>
+        <span class="forecastTempMax">
+          ${Math.round(forecast.main.temp_max)}
+        </span>° 
+          &#124; 
+        <span class="forecastTempMin">
+          ${Math.round(forecast.main.temp_min)}  
+        </span>°
+    </li>
     </ul>
   `;
   }
@@ -177,6 +179,10 @@ function convertFahrenheit(event) {
   let temperatureElement = document.querySelector("#mainTemperature");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+
+  celsiusLink.addEventListener("click", convertCelsius);
+  fahrenheitLink.removeEventListener("click", convertFahrenheit);
+
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
@@ -192,7 +198,7 @@ function convertFahrenheit(event) {
   let lowTemp = (temperatureLow * 9) / 5 + 32;
   lowTempElement.innerHTML = `${Math.round(lowTemp)}`;
 
-  let forecastHighElement = document.querySelectorAll("#forecastTempMax");
+  let forecastHighElement = document.querySelectorAll(".forecastTempMax");
   forecastHighElement.forEach(function (high) {
     let forecastHighTemp = high.innerHTML;
     high.innerHTML = `${Math.round(forecastHighTemp * 9) / 5 + 32}`;
@@ -203,6 +209,7 @@ function convertCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+
   let temperatureElement = document.querySelector("#mainTemperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
@@ -215,7 +222,7 @@ function convertCelsius(event) {
   let lowTempElement = document.querySelector("#temperatureLow");
   lowTempElement.innerHTML = `${Math.round(temperatureLow)}`;
 
-  let forecastLowElement = document.querySelectorAll("#forecastTempMin");
+  let forecastLowElement = document.querySelectorAll(".forecastTempMin");
   forecastLowElement.forEach(function (low) {
     let forecastLowTemp = low.innerHTML;
     low.innerHTML = `${Math.round(forecastLowTemp)}`;
@@ -223,9 +230,6 @@ function convertCelsius(event) {
 }
 
 let celsiusTemperature = null;
-let feelsLikeTemperature = null;
-let highTemperature = null;
-let lowTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertFahrenheit);
